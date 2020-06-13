@@ -1,8 +1,8 @@
 {
 	"miniprogramRoot": "client/dist/",
 	"cloudfunctionRoot": "cloud/functions/",
-	"description": "微信小程序博客",
-	"appid": "xxx",
+	"description": "石兴龙的个人博客",
+	"appid": "wxf25e232c63a1111a",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
