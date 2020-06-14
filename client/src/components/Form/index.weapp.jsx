@@ -1,6 +1,6 @@
 import Taro, { Component } from '@tarojs/taro'
 import cloneDeep from 'lodash/cloneDeep'
-import { View, Image, Swiper, SwiperItem } from "@tarojs/components"
+import { View, Image, Swiper, SwiperItem, TextArea } from "@tarojs/components"
 import {
   AtButton, AtInput, AtRadio,
   AtCheckbox, AtTextarea, AtSwitch
@@ -128,7 +128,8 @@ class SetForm extends Component {
             </View>
           )
         }
-        <AtTextarea
+        
+        <TextArea
           {...type.props}
           value={data[key]}
           onChange={v => this.changeState(v, key)}
@@ -198,6 +199,7 @@ class SetForm extends Component {
   renderFiles = (type, key) => {
     const { label } = type.props
     const { data, options } = this.props
+    data[key] = data[key] || [];
     let contentWidth = `${(data[key].length) * 158}rpx`
     let fileOptions = this.getOptionsMap()[key]
     const { maxFileCount } = fileOptions.type.props

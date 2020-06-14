@@ -32,12 +32,22 @@ class App extends Component {
    */
   config: Config = {
     pages: [
-      'pages/index/index',
+      // 'pages/index/index',
+
+      // 'pages/admin/index',
+      // 'pages/admin/edit/index',
+      
+      'pages/blog/index',
+      'pages/blog/edit/index',
+      'pages/blog/info/index',
+
+      'pages/menu/index',
+      'pages/menu/edit/index',
     ],
     window: {
-      navigationBarBackgroundColor: "#78A4F4",
-      navigationBarTextStyle: "white",
-      navigationBarTitleText: "微信-个人博客",
+      navigationBarBackgroundColor: "#fff",
+      navigationBarTextStyle: "black",
+      navigationBarTitleText: "微信-test",
     },
     cloud: true
   }

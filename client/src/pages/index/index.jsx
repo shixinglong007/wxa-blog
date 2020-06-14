@@ -3,16 +3,37 @@ import { View, Text, Button, ScrollView, Swiper, SwiperItem } from '@tarojs/comp
 import { connect } from '@tarojs/redux'
 import { AtButton } from 'taro-ui'
 
+import BasePage from '../../base/BasePage'
+
 import './index.less'
 
-@connect(state => state)
+@connect(state => ({ user: state.user }))
 export default class Index extends BasePage {
+
+  componentWillMount() {
+    this.login()
+    this.getAdmin()
+  }
+
+  login = () => {
+    const { dispatch } = this.props
+    dispatch({
+      type: 'user/login'
+    })
+  }
+
+  getAdmin = () => {
+    const { dispatch } = this.props
+    dispatch({
+      type: 'admin/select'
+    })
+  }
 
   toAdmin = () => {
     this.toPage(`/pages/admin/index`)
   }
 
-  renderAdmin = () => {
+  renderAdmin () {
     return (
       <View className='toAdmin' >
         <AtButton
@@ -29,6 +50,9 @@ export default class Index extends BasePage {
 
   render () {
     const { user, admin } = this.props
+    console.log(
+      this.props
+    )
     return (
       <View className='page'>
         {
