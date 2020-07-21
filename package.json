@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "commander": "^5.1.0",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.19"
   },
   "bin": {
     "taro-g": "./generator/bin/index.js"
